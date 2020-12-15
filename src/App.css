@@ -1,5 +1,6 @@
 .board{
-  width: 60vw;
+  width: fit-content;
+  max-width: 450px;
   position: relative;
 }
 
@@ -21,9 +22,14 @@
   cursor: pointer;
 }
 
+.playerScore {
+  max-width: 225px;
+  width: 45vw; 
+}
+
 .grid {
   width: fit-content;
-  margin: 0 auto;
+  
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
   grid-template-rows: 1fr 1fr 1fr;
@@ -31,8 +37,10 @@
 }
 
 .tile {
-  width: 150px;
-  height: 150px;
+  max-width: 150px;
+  max-height: 150px;
+  width: 30vw;
+  height: 30vw;
   display: flex;
   justify-content: center;
   align-items: center;

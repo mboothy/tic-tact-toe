@@ -103,16 +103,16 @@ const Board = () => {
     }, [tiles]);
 
     return (
-        <div className="board my-7">
-            <div className="stats text-center font-bold text-center text-gray-700 text-2xl flex flex-col justify-around items-center">
+        <div className="board my-7 flex flex-col items-center">
+            <div className="stats font-bold text-center text-gray-700 text-2xl flex flex-col justify-around items-center">
                 {/* <h2>Current Turn: Player {turn}</h2> */}
                 <div className="scores flex justify-center" style={{width: '450px'}}>
-                    <div style={{width: '225px'}} className={`player1Score text-white text-center py-2 rounded-tl-3xl
+                    <div className={`playerScore text-white text-center py-2 rounded-tl-3xl
                     ${turn === 1? 'bg-red-500' : 'bg-red-300'}
                     `}>
                         X Score: {p1Score}
                     </div>
-                    <div style={{width: '225px'}} className={`player2Score text-white text-center py-2 rounded-tr-3xl
+                    <div className={`playerScore text-white text-center py-2 rounded-tr-3xl
                     ${turn === 2? 'bg-blue-500' : 'bg-blue-300'}
                     `}>
                         O Score: {p2Score}
@@ -123,7 +123,7 @@ const Board = () => {
                 {renderedTiles}
             </div>
             {gameOver? 
-                <div className=" flex justify-center flex-col gameOver bg-green-600 text-white rounded-md p-4 shadow-md opacity-90">
+                <div className="flex justify-center flex-col gameOver bg-green-600 text-white rounded-md p-4 shadow-md opacity-90">
                     <h1 className="font-bold text-center text-white text-6xl">Game Over</h1>
                     <h3 className="text-base text-center text-2xl">{winner === 1 || winner === 2? `Winner is Player ${winner}`: "Draw"}</h3>
                     <p className="newGame flex items-center justify-center px-4 py-2 border border-transparent rounded-md shadow-sm text-sm font-bold text-white hover:text-green-200 text-lg" onClick={newGame}>New Game?</p>
